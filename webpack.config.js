@@ -29,6 +29,12 @@ module.exports = {
         ]
     },
     plugins: [
+        // http://vuejs.github.io/vue-loader/workflow/production.html
+        // new webpack.DefinePlugin({
+        //     'process.env': env
+        // }),
+        // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
+        //new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.ProvidePlugin({ //加载jq
             $: 'jquery'
         }),
@@ -39,6 +45,9 @@ module.exports = {
             },
             except: ['$super', '$', 'exports', 'require'] //排除关键字
         }),
+        // generate dist index.html with correct asset hash for caching.
+        // you can customize output by editing /index.html
+        // see https://github.com/ampedandwired/html-webpack-plugin
         new HtmlWebpackPlugin({ //根据模板插入css/js等生成最终HTML
             /* *
             // title: 用来生成页面的 title 元素
@@ -65,6 +74,9 @@ module.exports = {
             minify: { //压缩HTML文件
                 removeComments: false, //移除HTML中的注释
                 collapseWhitespace: false //删除空白符与换行符
+                //removeAttributeQuotes: true  //移除引号
+                // more options:
+                // https://github.com/kangax/html-minifier#options-quick-reference
             }
         })
     ],
