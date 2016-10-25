@@ -72,11 +72,11 @@ module.exports = {
             hash: true, //为静态资源生成hash值
 
             minify: { //压缩HTML文件
+                // more options:
+                // https://github.com/kangax/html-minifier#options-quick-reference
                 removeComments: false, //移除HTML中的注释
                 collapseWhitespace: false //删除空白符与换行符
                 //removeAttributeQuotes: true  //移除引号
-                // more options:
-                // https://github.com/kangax/html-minifier#options-quick-reference
             }
         })
     ],
